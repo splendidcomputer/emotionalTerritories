@@ -33,7 +33,7 @@ try {
   const numCols = dataMat[0].length;
 
   // Perform Hierachical Clustering
-  const maxCoords: number[][] = MyHClus`tering(dataMat);
+  const maxCoords: number[][] = MyHClustering(dataMat);
   console.log(maxCoords);
 
   // Calculate the Correaltion Matrix

@@ -14,13 +14,23 @@ export function MyHClustering(
 ): number[][] {
   // Calculate the Correaltion Matrix
   let corrMat = correlation(dataMat);
+
+  //   console.log(
+  //     `The data array has ${dataMat.length} rows and ${dataMat[0].length} columns.`
+  //   );
+  //   console.table(corrMat);
   let maxCoor = findMaxCoord(corrMat);
-
+  //   console.log(maxCoor);
+  //   console.log(corrMat[maxCoor[0]][maxCoor[1]]);
   maxCoords.push(maxCoor);
+  const corrRows = corrMat.length;
+  const corrCols = corrMat[0].length;
+  //   console.log(
+  //     `The correlation array has ${corrRows} rows and ${corrCols} columns.`
+  //   );
 
-  console.log(dataMat[1].length);
   // Base case: if dataMat has only one column, return the maxCoords
-  if (dataMat[1].length === 1) {
+  if (dataMat[0].length === 1) {
     return maxCoords;
   }
 

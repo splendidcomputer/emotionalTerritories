@@ -12,11 +12,11 @@ export function deleteAndAddMean(
     (2 * numRows);
 
   // Log the two columns and their mean
-  console.table({
-    [col1]: dataMat.map((row) => row[col1]),
-    [col2]: dataMat.map((row) => row[col2]),
-    mean: Array(numRows).fill(mean),
-  });
+  // console.table({
+  //   [col1]: dataMat.map((row) => row[col1]),
+  //   [col2]: dataMat.map((row) => row[col2]),
+  //   mean: Array(numRows).fill(mean),
+  // });
 
   // Create a new matrix with the two columns removed and the mean added as the last column
   const newDataMat = dataMat.map((row) => [
