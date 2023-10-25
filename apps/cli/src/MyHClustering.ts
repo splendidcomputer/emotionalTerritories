@@ -1,8 +1,12 @@
-/*This is a recursive function that takes the `dataMat`,
-and then calcualtes the correlation of the `dataMat`using the defined `correaltion.ts`.
-Then finds the coordinates of the maximum element in it using the `findMaxCoor.ts`.
-Then uses the `deleteAndAddMean.ts to receive the new dataMat to call itself while `dataMat` has more than one column.
-This function should return the coordinates of the maximum element each time it is executed.*/
+/**
+ * This function is recursive and does the following:
+ * 1. Takes 'dataMat';
+ * 2. Calculates correlation using 'Correlation.ts';
+ * 3. Finds coordinates of the maximum element of the correlation matrix (the most similar pair) using 'FindMaxCoor.ts';
+ * 4. Uses 'DeleteAndAddMean.ts' to get a new 'dataMat'.
+ * 5. Repeats as long as 'dataMat' has more than one column.
+ * Returns the coordinates of the maximum element each time.
+ */
 
 import { Correlation } from "./Correaltion";
 import { DeleteAndAddMean } from "./DeleteAndAddMean";
@@ -13,8 +17,8 @@ export function MyHClustering(
   maxCoords: number[][] = []
 ): number[][] {
   // Calculate the Correaltion Matrix
-  let corrMat = Correlation(dataMat);
-  let maxCoor = FindMaxCoord(corrMat);
+  let corrMat = Correlation(dataMat); // The correlation matrix of the current points.
+  let maxCoor = FindMaxCoord(corrMat); // The coordinates of the most similar pair.
 
   maxCoords.push(maxCoor);
 
