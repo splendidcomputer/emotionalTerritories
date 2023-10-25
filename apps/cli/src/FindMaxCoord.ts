@@ -1,4 +1,4 @@
-export function findMaxCoord(matrix: number[][]): [number, number] {
+export function FindMaxCoord(matrix: number[][]): [number, number] {
   const nRows = matrix.length;
   const nCols = matrix[0].length;
   const maxCoord: [number, number] = [0, 0];

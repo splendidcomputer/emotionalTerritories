@@ -1,4 +1,4 @@
-export function deleteAndAddMean(
+export function DeleteAndAddMean(
   dataMat: number[][],
   col1: number,
   col2: number

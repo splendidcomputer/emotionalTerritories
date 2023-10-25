@@ -1,4 +1,4 @@
-export function correlation(matrix: number[][]): number[][] {
+export function Correlation(matrix: number[][]): number[][] {
   const nRows = matrix.length;
   const nCols = matrix[0].length;
   const means = new Array(nCols).fill(0);

@@ -4,17 +4,17 @@ Then finds the coordinates of the maximum element in it using the `findMaxCoor.t
 Then uses the `deleteAndAddMean.ts to receive the new dataMat to call itself while `dataMat` has more than one column.
 This function should return the coordinates of the maximum element each time it is executed.*/
 
-import { correlation } from "./correaltion";
-import { deleteAndAddMean } from "./deleteAndAddMean";
-import { findMaxCoord } from "./findMaxCoord";
+import { Correlation } from "./Correaltion";
+import { DeleteAndAddMean } from "./DeleteAndAddMean";
+import { FindMaxCoord } from "./FindMaxCoord";
 
 export function MyHClustering(
   dataMat: number[][],
   maxCoords: number[][] = []
 ): number[][] {
   // Calculate the Correaltion Matrix
-  let corrMat = correlation(dataMat);
-  let maxCoor = findMaxCoord(corrMat);
+  let corrMat = Correlation(dataMat);
+  let maxCoor = FindMaxCoord(corrMat);
 
   maxCoords.push(maxCoor);
 
@@ -25,6 +25,6 @@ export function MyHClustering(
   }
 
   // Recursive case: delete one column and call the function again
-  let newDataMat = deleteAndAddMean(dataMat, maxCoor[0], maxCoor[1]);
+  let newDataMat = DeleteAndAddMean(dataMat, maxCoor[0], maxCoor[1]);
   return MyHClustering(newDataMat, maxCoords);
 }
